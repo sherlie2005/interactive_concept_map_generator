@@ -1,0 +1,2 @@
+Natural Language Processing enables machines to understand human language.
+It uses algorithms and linguistic rules to extract meaning from text.

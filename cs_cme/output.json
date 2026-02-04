@@ -1,0 +1,58 @@
+[
+    {
+        "sentence_id": 0,
+        "nodes": [
+            {
+                "id": "machines",
+                "sentence_id": 0
+            },
+            {
+                "id": "Natural Language Processing",
+                "sentence_id": 0
+            },
+            {
+                "id": "human language",
+                "sentence_id": 0
+            }
+        ],
+        "edges": [
+            {
+                "source": "machines",
+                "target": "language",
+                "relation": "understand"
+            }
+        ]
+    },
+    {
+        "sentence_id": 1,
+        "nodes": [
+            {
+                "id": "linguistic rules",
+                "sentence_id": 1
+            },
+            {
+                "id": "text",
+                "sentence_id": 1
+            },
+            {
+                "id": "algorithms",
+                "sentence_id": 1
+            },
+            {
+                "id": "meaning",
+                "sentence_id": 1
+            },
+            {
+                "id": "It",
+                "sentence_id": 1
+            }
+        ],
+        "edges": [
+            {
+                "source": "It",
+                "target": "algorithms",
+                "relation": "use"
+            }
+        ]
+    }
+]
