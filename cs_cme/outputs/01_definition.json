@@ -1,0 +1,20 @@
+[
+    {
+        "sentence_id": "0_0",
+        "nodes": [
+            {
+                "id": "Artificial Intelligence",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "a branch",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "Machine Learning",
+                "sentence_id": "0_0"
+            }
+        ],
+        "edges": []
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "sentence_id": "0_0",
+        "nodes": [
+            {
+                "id": "plants",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "Photosynthesis",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "sunlight",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "food",
+                "sentence_id": "0_0"
+            }
+        ],
+        "edges": [
+            {
+                "source": "plants",
+                "target": "food",
+                "relation": "produce",
+                "negated": false
+            },
+            {
+                "source": "plants",
+                "target": "sunlight",
+                "relation": "use",
+                "negated": false
+            }
+        ]
+    }
+]

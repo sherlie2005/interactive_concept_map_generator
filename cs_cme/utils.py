@@ -2,11 +2,20 @@ def normalize_text(text):
     return text.lower().strip()
 
 
-def map_token_to_chunk(token, noun_chunks):
+def map_token_to_chunk(token_or_text, noun_chunks):
+    # If already a string (from context memory), return directly
+    if isinstance(token_or_text, str):
+        return token_or_text
+
+    # Else, it's a spaCy token
+    token_text = token_or_text.text
+
     for chunk in noun_chunks:
-        if token.text in chunk.text:
+        if token_text in chunk.text:
             return chunk.text
-    return token.text
+
+    return token_text
+
 
 
 def resolve_pronoun(token, last_subject):

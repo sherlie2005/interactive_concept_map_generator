@@ -1,0 +1,48 @@
+[
+    {
+        "sentence_id": "0_0",
+        "nodes": [
+            {
+                "id": "Artificial Intelligence",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "industries",
+                "sentence_id": "0_0"
+            }
+        ],
+        "edges": [
+            {
+                "source": "Intelligence",
+                "target": "industries",
+                "relation": "transform",
+                "negated": false
+            }
+        ]
+    },
+    {
+        "sentence_id": "0_1",
+        "nodes": [
+            {
+                "id": "education",
+                "sentence_id": "0_1"
+            },
+            {
+                "id": "healthcare",
+                "sentence_id": "0_1"
+            },
+            {
+                "id": "It",
+                "sentence_id": "0_1"
+            }
+        ],
+        "edges": [
+            {
+                "source": "Intelligence",
+                "target": "healthcare",
+                "relation": "impact",
+                "negated": false
+            }
+        ]
+    }
+]

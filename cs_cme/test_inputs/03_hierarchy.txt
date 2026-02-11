@@ -1,0 +1,1 @@
+Supervised learning and unsupervised learning are types of machine learning.

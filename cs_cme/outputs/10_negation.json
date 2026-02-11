@@ -1,0 +1,23 @@
+[
+    {
+        "sentence_id": "0_0",
+        "nodes": [
+            {
+                "id": "explicit programming",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "Machine learning",
+                "sentence_id": "0_0"
+            }
+        ],
+        "edges": [
+            {
+                "source": "learning",
+                "target": "explicit programming",
+                "relation": "require",
+                "negated": true
+            }
+        ]
+    }
+]

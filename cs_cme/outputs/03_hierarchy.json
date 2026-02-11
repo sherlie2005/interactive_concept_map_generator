@@ -1,0 +1,24 @@
+[
+    {
+        "sentence_id": "0_0",
+        "nodes": [
+            {
+                "id": "types",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "Supervised learning",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "machine learning",
+                "sentence_id": "0_0"
+            },
+            {
+                "id": "unsupervised learning",
+                "sentence_id": "0_0"
+            }
+        ],
+        "edges": []
+    }
+]
