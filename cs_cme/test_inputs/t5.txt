@@ -1,0 +1,3 @@
+The CPU (Central Processing Unit) executes instructions. 
+The GPU (Graphics Processing Unit) accelerates parallel computations. 
+Both components are essential parts of a computer system.

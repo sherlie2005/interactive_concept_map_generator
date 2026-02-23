@@ -1,0 +1,14 @@
+The human body has 11 major interconnected organ systems (integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic, respiratory, digestive, urinary, reproductive) that collaborate to maintain homeostasis. They work together by transporting nutrients (cardiovascular/digestive), supplying oxygen (respiratory), removing wastes (urinary), and coordinating actions via hormones and nerve impulses. 
+
+The 11 Major Human Body Systems and Their Uses
+1. Integumentary System (Skin, hair, nails): Protects underlying tissues, regulates body temperature, and provides sensory information.
+2. Skeletal System (Bones, cartilage): Provides structural support, protects internal organs, and allows for movement.
+3. Muscular System (Muscles): Enables movement of the body and internal organs, maintains posture, and generates heat.
+4. Nervous System (Brain, spinal cord, nerves): Coordinates rapid, voluntary, and involuntary responses by transmitting electrical signals.
+5. Endocrine System (Glands, hormones): Regulates long-term metabolic processes, growth, and reproduction via chemical messengers.
+6. Cardiovascular System (Heart, blood vessels, blood): Transports oxygen, nutrients, waste products, and hormones throughout the body.
+7. Lymphatic/Immune System (Lymph nodes, vessels, white blood cells): Defends against infection, removes pathogens, and returns tissue fluid to the blood.
+8. Respiratory System (Lungs, trachea, airway): Facilitates gas exchange, taking in oxygen (O2) and releasing carbon dioxide(CO2)
+9. Digestive System (Mouth, stomach, intestines): Breaks down food into nutrients and absorbs them into the bloodstream.
+10. Urinary System (Kidneys, bladder): Filters blood to remove nitrogenous wastes and regulates water/electrolyte balance.
+11. Reproductive System (Gonads, associated organs): Produces sex cells and hormones, enabling the continuation of the species.

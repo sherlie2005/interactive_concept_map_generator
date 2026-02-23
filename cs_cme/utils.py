@@ -8,13 +8,18 @@ def map_token_to_chunk(token_or_text, noun_chunks):
         return token_or_text
 
     # Else, it's a spaCy token
-    token_text = token_or_text.text
+    token = token_or_text
 
     for chunk in noun_chunks:
-        if token_text in chunk.text:
-            return chunk.text
+        if token.i >= chunk.start and token.i < chunk.end:
+            return chunk.text.strip()
+        
+    # Fallback to full subtree (for rare parsing cases)
+    subtree = list(token.subtree)
+    if len(subtree) > 1:
+        return " ".join([t.text for t in subtree]).strip()
 
-    return token_text
+    return token.text.strip()
 
 
 

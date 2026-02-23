@@ -1,18 +1,20 @@
-def build_graph(sentence_id, concepts, relations):
+def build_graph(sentence_id, concepts, relations, descriptions=None):
     nodes = []
-    edges = []
 
     for c in concepts:
-        nodes.append({
+        node = {
             "id": c,
             "sentence_id": sentence_id
-        })
+        }
 
-    for r in relations:
-        edges.append(r)
+        # 🔹 Attach descriptive sentences if available
+        if descriptions and c in descriptions:
+            node["descriptions"] = descriptions[c]
+
+        nodes.append(node)
 
     return {
         "sentence_id": sentence_id,
         "nodes": nodes,
-        "edges": edges
+        "edges": relations
     }

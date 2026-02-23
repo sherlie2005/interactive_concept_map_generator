@@ -1,0 +1,7 @@
+Cloud computing provides scalable computing resources over the internet. 
+It allows users to access storage and processing power remotely.
+
+Cloud computing has three main service models. 
+Infrastructure as a Service provides virtualized hardware resources. 
+Platform as a Service offers development environments. 
+Software as a Service delivers applications through a web browser.

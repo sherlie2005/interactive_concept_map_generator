@@ -1,0 +1,5 @@
+Artificial Intelligence is a branch of computer science. 
+It enables machines to perform tasks that require human intelligence. 
+Machine learning is a subset of artificial intelligence. 
+Machine learning algorithms analyze data and improve performance over time. 
+Deep learning is a type of machine learning that uses neural networks.

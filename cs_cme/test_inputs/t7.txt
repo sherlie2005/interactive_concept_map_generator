@@ -1,0 +1,4 @@
+Neural networks consist of interconnected layers of artificial neurons. 
+Each neuron applies a weighted sum followed by an activation function. 
+Backpropagation computes gradients to minimize the loss function. 
+Optimization algorithms such as stochastic gradient descent update model parameters.

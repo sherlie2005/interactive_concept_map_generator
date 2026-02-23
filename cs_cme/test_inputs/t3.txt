@@ -1,0 +1,6 @@
+The Solar System consists of several types of celestial bodies.
+
+1. Planets are large objects that orbit the Sun.
+2. Dwarf planets are smaller than planets but also orbit the Sun.
+3. Moons orbit planets.
+4. Asteroids are rocky objects found mainly in the asteroid belt.

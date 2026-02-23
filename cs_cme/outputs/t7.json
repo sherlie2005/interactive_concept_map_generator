@@ -1,0 +1,64 @@
+{
+    "nodes": [
+        {
+            "id": "Neural Networks",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Interconnected Layers",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Artificial Neurons",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Each Neuron",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "An Activation Function",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "A Weighted Sum",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Backpropagation",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Loss Function",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Gradients",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Optimization Algorithms",
+            "frequency": 1,
+            "descriptions": [
+                "Optimization algorithms such as stochastic gradient descent update model parameters."
+            ]
+        },
+        {
+            "id": "Stochastic Gradient Descent Update Model Parameters",
+            "frequency": 1,
+            "descriptions": [
+                "Optimization algorithms such as stochastic gradient descent update model parameters."
+            ]
+        }
+    ],
+    "edges": []
+}

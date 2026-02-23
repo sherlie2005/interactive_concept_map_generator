@@ -1,0 +1,70 @@
+{
+    "nodes": [
+        {
+            "id": "Several Types",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Celestial Bodies",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Solar System",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Large Objects",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Planets",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "The Sun",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Dwarf Planets",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Moons Orbit Planets",
+            "frequency": 1,
+            "descriptions": [
+                "Moons orbit planets."
+            ]
+        },
+        {
+            "id": "Asteroids",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Asteroid Belt",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Rocky Objects",
+            "frequency": 1,
+            "descriptions": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "Planets",
+            "target": "The Sun",
+            "relation": "orbit",
+            "weight": 2,
+            "negated": false
+        }
+    ]
+}

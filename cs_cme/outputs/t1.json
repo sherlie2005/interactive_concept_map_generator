@@ -1,0 +1,92 @@
+{
+    "nodes": [
+        {
+            "id": "Computer Science",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Artificial Intelligence",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Human Intelligence",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Tasks",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Machines",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Machine Learning",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "A Subset",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Data",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Time",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Performance",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Machine Learning Algorithms",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Neural Networks",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Deep Learning",
+            "frequency": 1,
+            "descriptions": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "Machine Learning",
+            "target": "Artificial Intelligence",
+            "relation": "is_a",
+            "weight": 1,
+            "negated": false
+        },
+        {
+            "source": "Deep Learning",
+            "target": "Machine Learning",
+            "relation": "is_a",
+            "weight": 1,
+            "negated": false
+        },
+        {
+            "source": "Machine Learning",
+            "target": "Neural Networks",
+            "relation": "use",
+            "weight": 1,
+            "negated": false
+        }
+    ]
+}

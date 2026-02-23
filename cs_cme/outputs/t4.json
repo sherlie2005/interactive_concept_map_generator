@@ -1,0 +1,71 @@
+{
+    "nodes": [
+        {
+            "id": "Photosynthesis",
+            "frequency": 2,
+            "descriptions": [
+                "A biological process in which plants convert light energy into chemical energy."
+            ]
+        },
+        {
+            "id": "Light Energy",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Chemical Energy",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Which",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Chloroplast",
+            "frequency": 1,
+            "descriptions": [
+                "An organelle that contains chlorophyll and facilitates photosynthesis."
+            ]
+        },
+        {
+            "id": "Chlorophyll",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Mitochondria",
+            "frequency": 1,
+            "descriptions": [
+                "Organelles responsible for producing ATP through cellular respiration."
+            ]
+        },
+        {
+            "id": "ATP",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Cellular Respiration",
+            "frequency": 1,
+            "descriptions": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "Chloroplast",
+            "target": "Chlorophyll",
+            "relation": "contain",
+            "weight": 1,
+            "negated": false
+        },
+        {
+            "source": "Chloroplast",
+            "target": "Photosynthesis",
+            "relation": "facilitate",
+            "weight": 1,
+            "negated": false
+        }
+    ]
+}

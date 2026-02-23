@@ -1,0 +1,34 @@
+{
+    "nodes": [
+        {
+            "id": "Pathogens",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Body",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Lymphatic/immune System",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Nutrients",
+            "frequency": 1,
+            "descriptions": [
+                "The cardiovascular/respiratory systems transport oxygen and nutrients."
+            ]
+        },
+        {
+            "id": "The Cardiovascular/respiratory Systems Transport Oxygen",
+            "frequency": 1,
+            "descriptions": [
+                "The cardiovascular/respiratory systems transport oxygen and nutrients."
+            ]
+        }
+    ],
+    "edges": []
+}

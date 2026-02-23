@@ -1,0 +1,102 @@
+{
+    "nodes": [
+        {
+            "id": "Cloud Computing",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Scalable Computing Resources",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The Internet",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Storage",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Processing Power",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Users",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Three Main Service Models",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Infrastructure",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Virtualized Hardware Resources",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "A Service",
+            "frequency": 3,
+            "descriptions": []
+        },
+        {
+            "id": "Platform",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Development Environments",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Software",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "Applications",
+            "frequency": 2,
+            "descriptions": []
+        },
+        {
+            "id": "A Web Browser",
+            "frequency": 1,
+            "descriptions": []
+        }
+    ],
+    "edges": [
+        {
+            "source": "Cloud Computing",
+            "target": "Three Main Service Models",
+            "relation": "have",
+            "weight": 2,
+            "negated": false
+        },
+        {
+            "source": "Platform",
+            "target": "Development Environments",
+            "relation": "offer",
+            "weight": 3,
+            "negated": false
+        },
+        {
+            "source": "Software",
+            "target": "Applications",
+            "relation": "deliver",
+            "weight": 3,
+            "negated": false
+        }
+    ]
+}

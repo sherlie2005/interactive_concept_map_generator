@@ -1,0 +1,50 @@
+{
+    "nodes": [
+        {
+            "id": "Central Processing Unit",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Instructions",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The CPU",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The GPU",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Parallel Computations",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Graphics Processing Unit",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "A Computer System",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Essential Parts",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Both Components",
+            "frequency": 1,
+            "descriptions": []
+        }
+    ],
+    "edges": []
+}
