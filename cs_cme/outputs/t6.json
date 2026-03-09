@@ -1,34 +1,78 @@
 {
     "nodes": [
         {
-            "id": "Pathogens",
+            "id": "immune system",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "The Body",
+            "id": "the body",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "The Lymphatic/immune System",
+            "id": "pathogens",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Nutrients",
+            "id": "The lymphatic system",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "The cardiovascular systems",
             "frequency": 1,
             "descriptions": [
-                "The cardiovascular/respiratory systems transport oxygen and nutrients."
+                "The cardiovascular systems and respiratory systems transport oxygen and nutrients."
             ]
         },
         {
-            "id": "The Cardiovascular/respiratory Systems Transport Oxygen",
+            "id": "transport oxygen",
             "frequency": 1,
             "descriptions": [
-                "The cardiovascular/respiratory systems transport oxygen and nutrients."
+                "The cardiovascular systems and respiratory systems transport oxygen and nutrients."
+            ]
+        },
+        {
+            "id": "respiratory systems",
+            "frequency": 1,
+            "descriptions": [
+                "The cardiovascular systems and respiratory systems transport oxygen and nutrients."
+            ]
+        },
+        {
+            "id": "nutrients",
+            "frequency": 1,
+            "descriptions": [
+                "The cardiovascular systems and respiratory systems transport oxygen and nutrients."
             ]
         }
     ],
-    "edges": []
+    "edges": [
+        {
+            "source": "immune system",
+            "target": "the body",
+            "relation": "protect_from",
+            "negated": false
+        },
+        {
+            "source": "immune system",
+            "target": "pathogens",
+            "relation": "protect_from",
+            "negated": false
+        },
+        {
+            "source": "immune system",
+            "target": "the body",
+            "relation": "protect_from",
+            "negated": false
+        },
+        {
+            "source": "immune system",
+            "target": "pathogens",
+            "relation": "protect_from",
+            "negated": false
+        }
+    ]
 }

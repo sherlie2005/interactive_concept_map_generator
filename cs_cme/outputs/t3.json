@@ -1,12 +1,7 @@
 {
     "nodes": [
         {
-            "id": "Several Types",
-            "frequency": 1,
-            "descriptions": []
-        },
-        {
-            "id": "Celestial Bodies",
+            "id": "celestial bodies",
             "frequency": 1,
             "descriptions": []
         },
@@ -16,54 +11,89 @@
             "descriptions": []
         },
         {
-            "id": "Large Objects",
-            "frequency": 1,
-            "descriptions": []
-        },
-        {
             "id": "Planets",
             "frequency": 2,
             "descriptions": []
         },
         {
-            "id": "The Sun",
+            "id": "the Sun",
             "frequency": 2,
             "descriptions": []
         },
         {
-            "id": "Dwarf Planets",
+            "id": "large objects",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Moons Orbit Planets",
+            "id": "Dwarf planets",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "Moons orbit planets",
             "frequency": 1,
             "descriptions": [
                 "Moons orbit planets."
             ]
         },
         {
+            "id": "the asteroid belt",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "rocky objects",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
             "id": "Asteroids",
-            "frequency": 1,
-            "descriptions": []
-        },
-        {
-            "id": "The Asteroid Belt",
-            "frequency": 1,
-            "descriptions": []
-        },
-        {
-            "id": "Rocky Objects",
             "frequency": 1,
             "descriptions": []
         }
     ],
     "edges": [
         {
+            "source": "The Solar System",
+            "target": "several types",
+            "relation": "consist_of",
+            "negated": false
+        },
+        {
             "source": "Planets",
-            "target": "The Sun",
+            "target": "large objects",
+            "relation": "is_a",
+            "negated": false
+        },
+        {
+            "source": "Planets",
+            "target": "the Sun",
             "relation": "orbit",
-            "weight": 2,
+            "negated": false
+        },
+        {
+            "source": "Dwarf planets",
+            "target": "Planets",
+            "relation": "is_a",
+            "negated": false
+        },
+        {
+            "source": "Dwarf planets",
+            "target": "the Sun",
+            "relation": "orbit",
+            "negated": false
+        },
+        {
+            "source": "Asteroids",
+            "target": "rocky objects",
+            "relation": "is_a",
+            "negated": false
+        },
+        {
+            "source": "Asteroids",
+            "target": "the asteroid belt",
+            "relation": "find_in",
             "negated": false
         }
     ]

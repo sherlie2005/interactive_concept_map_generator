@@ -1,0 +1,10 @@
+{
+  "edges": [
+    {"source": "Solar System", "relation": "consist_of", "target": "Celestial Bodies"},
+    {"source": "Planets", "relation": "orbit", "target": "Sun"},
+    {"source": "Dwarf Planets", "relation": "orbit", "target": "Sun"},
+    {"source": "Moons", "relation": "orbit", "target": "Planets"},
+    {"source": "Asteroids", "relation": "found_in", "target": "Asteroid Belt"},
+    {"source": "Asteroids", "relation": "is_a", "target": "Rocky Objects"}
+  ]
+}

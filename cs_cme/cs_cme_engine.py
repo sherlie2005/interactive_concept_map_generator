@@ -20,6 +20,22 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+def normalize_to_concept(term, concepts):
+    term_lower = term.lower()
+
+    for c in concepts:
+        if term_lower == c.lower():
+            return c
+
+    for c in concepts:
+        if term_lower in c.lower():
+            return c
+
+    for c in concepts:
+        if c.lower() in term_lower:
+            return c
+
+    return term
 
 def run_cs_cme(text):
 
@@ -29,6 +45,8 @@ def run_cs_cme(text):
     canonical_map = {}
     paragraphs = text.split("\n\n")
     full_graph = []
+    all_nodes = {}
+    all_edges = []
 
     # 🔹 Global description store
     node_descriptions = {}
@@ -63,10 +81,18 @@ def run_cs_cme(text):
                     # Extract relations from definition
                     relations = extract_relations(definition, context)
 
+                    
+
                     # 🔹 Force subject to term
                     for r in relations:
                         r["source"] = term
-
+                    # 🔹 Remove invalid relation targets
+                    clean_relations = []
+                    for r in relations:
+                        if r["target"].lower() not in {"which", "that", "who", "whom", "whose"}:
+                            clean_relations.append(r)
+                    
+                    relations = clean_relations
                     # 🔹 IMPORTANT FIX:
                     # Add targets as concepts so edges survive merging
                     concepts = [term] + [r["target"] for r in relations]
@@ -78,9 +104,46 @@ def run_cs_cme(text):
                         descriptions=node_descriptions
                     )
 
-                    full_graph.append(graph)
+                    # merge nodes
+                    for node in graph["nodes"]:
+                        nid = node["id"]
+
+                        if nid not in all_nodes:
+                            all_nodes[nid] = node
+                        else:
+                            all_nodes[nid]["frequency"] = all_nodes[nid].get("frequency",1) + 1
+
+                    # merge edges
+                    for edge in graph["edges"]:
+                        all_edges.append(edge)
                     continue  # Skip normal processing
 
+            # ==================================================
+            # 🔹 PARENTHESIS ALIAS HANDLER (INTEGRATED)
+            # ==================================================
+            import re
+
+            alias_pattern = re.findall(r'([A-Za-z0-9\s]+)\s*\(([^)]+)\)', sentence)
+
+            alias_relations = []
+            alias_concepts = []
+
+            for main_term, alias in alias_pattern:
+
+                main_term = main_term.strip()
+                alias = alias.strip()
+
+                # Remove leading articles
+                main_term = re.sub(r'^(The|A|An)\s+', '', main_term, flags=re.IGNORECASE)
+
+                alias_relations.append({
+                    "source": main_term,
+                    "target": alias,
+                    "relation": "alias_of",
+                    "negated": False
+                })
+
+                alias_concepts.extend([main_term, alias])
 
             # ==================================================
             # 🔹 NORMAL PROCESSING
@@ -95,10 +158,39 @@ def run_cs_cme(text):
 
             relations = extract_relations(sentence, context)
 
+            # Merge alias concepts and relations
+            concepts.extend(alias_concepts)
+            relations.extend(alias_relations)
+
+            # 🔹 Normalize relation nodes to existing concepts
+            normalized_relations = []
+
+            for r in relations:
+
+                src = normalize_to_concept(r["source"], concepts)
+                tgt = normalize_to_concept(r["target"], concepts)
+
+                r["source"] = src
+                r["target"] = tgt
+
+                normalized_relations.append(r)
+
+            relations = normalized_relations
+
             # If descriptive sentence (no relations but has concepts)
             if not relations and concepts:
                 for c in concepts:
                     node_descriptions.setdefault(c, []).append(sentence)
+
+                graph = build_graph(
+                    sentence_id=f"{p_id}_{s_id}",
+                    concepts=concepts,
+                    relations=[],
+                    descriptions=node_descriptions
+                )
+
+                full_graph.append(graph)
+                continue
 
             # Canonical mapping
             normalized_concepts = []
@@ -111,6 +203,21 @@ def run_cs_cme(text):
                     normalized_concepts.append(concept)
 
             concepts = normalized_concepts
+
+            # -------------------------------------------------
+            # Normalize relation nodes using canonical mapping
+            # -------------------------------------------------
+
+            for r in relations:
+
+                src_key = r["source"].lower()
+                tgt_key = r["target"].lower()
+
+                if src_key in canonical_map:
+                    r["source"] = canonical_map[src_key]
+
+                if tgt_key in canonical_map:
+                    r["target"] = canonical_map[tgt_key]
 
             graph = build_graph(
                 sentence_id=f"{p_id}_{s_id}",

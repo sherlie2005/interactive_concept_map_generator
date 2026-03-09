@@ -12,53 +12,80 @@ HIERARCHY_STOP_WORDS = {
     "category", "categories"
 }
 
-NOISE_WORDS = {
-    "lot", "a lot"
-}
+NOISE_WORDS = {"lot", "a lot"}
 
 
 def extract_concepts(sentence):
+
     doc = nlp(sentence)
-    concepts = set()
+
+    # Collect raw noun chunks
+    raw_chunks = []
 
     for chunk in doc.noun_chunks:
+
         text = chunk.text.strip()
         lower = text.lower()
 
-        # Remove pure relative pronouns
         if lower in RELATIVE_PRONOUNS:
             continue
 
-        # Remove structural hierarchy placeholders
         if lower in HIERARCHY_STOP_WORDS:
             continue
 
         if lower.startswith("a ") and lower[2:] in HIERARCHY_STOP_WORDS:
             continue
 
-        # Remove noisy phrases
         if lower in NOISE_WORDS:
             continue
 
-        # Avoid very short meaningless chunks
-        if len(lower) <= 2:
-            continue
-
         if chunk.root.pos_ == "PRON":
-            continue
-        
-        if lower in {"which", "that", "who", "whom", "whose"}:
-            continue
-
-        if lower.isdigit():
             continue
 
         if chunk.root.pos_ not in ("NOUN", "PROPN"):
             continue
 
-        if len(lower.split()) == 1 and chunk.root.pos_ == "VERB":
+        raw_chunks.append((chunk.start, chunk.end, text))
+
+    # Sort by phrase length (longest first)
+    raw_chunks.sort(key=lambda x: (x[1] - x[0]), reverse=True)
+
+    selected = []
+    occupied = set()
+
+    for start, end, text in raw_chunks:
+
+        overlap = False
+
+        for i in range(start, end):
+            if i in occupied:
+                overlap = True
+                break
+
+        if not overlap:
+            selected.append(text)
+
+            for i in range(start, end):
+                occupied.add(i)
+
+    ABSTRACT_HEADS = {
+    "type", "types",
+    "kind", "kinds",
+    "form", "forms",
+    "category", "categories",
+    "subset",
+    "branch",
+    "part"
+}
+
+    cleaned = []
+
+    for c in selected:
+        words = c.lower().split()
+
+        if words[-1] in ABSTRACT_HEADS:
             continue
 
-        concepts.add(text)
+        cleaned.append(c)
 
-    return list(concepts)
+    return list(set(cleaned))

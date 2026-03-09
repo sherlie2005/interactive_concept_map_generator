@@ -1,32 +1,37 @@
 {
     "nodes": [
         {
-            "id": "Neural Networks",
+            "id": "Neural networks",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Interconnected Layers",
+            "id": "interconnected layers",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Artificial Neurons",
+            "id": "artificial neurons",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Each Neuron",
+            "id": "a weighted sum",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "An Activation Function",
+            "id": "Each neuron",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "A Weighted Sum",
+            "id": "an activation function",
+            "frequency": 1,
+            "descriptions": []
+        },
+        {
+            "id": "gradients",
             "frequency": 1,
             "descriptions": []
         },
@@ -36,29 +41,49 @@
             "descriptions": []
         },
         {
-            "id": "The Loss Function",
+            "id": "the loss function",
             "frequency": 1,
             "descriptions": []
         },
         {
-            "id": "Gradients",
-            "frequency": 1,
-            "descriptions": []
-        },
-        {
-            "id": "Optimization Algorithms",
+            "id": "stochastic gradient descent update model parameters",
             "frequency": 1,
             "descriptions": [
                 "Optimization algorithms such as stochastic gradient descent update model parameters."
             ]
         },
         {
-            "id": "Stochastic Gradient Descent Update Model Parameters",
+            "id": "Optimization algorithms",
             "frequency": 1,
             "descriptions": [
                 "Optimization algorithms such as stochastic gradient descent update model parameters."
             ]
         }
     ],
-    "edges": []
+    "edges": [
+        {
+            "source": "Neural networks",
+            "target": "interconnected layers",
+            "relation": "consist_of",
+            "negated": false
+        },
+        {
+            "source": "Each neuron",
+            "target": "a weighted sum",
+            "relation": "apply",
+            "negated": false
+        },
+        {
+            "source": "Backpropagation",
+            "target": "gradients",
+            "relation": "compute",
+            "negated": false
+        },
+        {
+            "source": "Backpropagation",
+            "target": "the loss function",
+            "relation": "minimize",
+            "negated": false
+        }
+    ]
 }

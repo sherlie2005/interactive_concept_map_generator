@@ -1,0 +1,13 @@
+{
+  "relations": [
+    ["Artificial Intelligence", "is_a", "Computer Science"],
+    ["Artificial Intelligence", "enable", "Machines"],
+    ["Machines", "perform", "Tasks"],
+    ["Tasks", "require", "Human Intelligence"],
+    ["Machine Learning", "is_a", "Artificial Intelligence"],
+    ["Machine Learning Algorithms", "analyze", "Data"],
+    ["Machine Learning Algorithms", "improve", "Performance"],
+    ["Deep Learning", "is_a", "Machine Learning"],
+    ["Machine Learning", "use", "Neural Networks"]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "edges": [
+    {"source": "Cloud Computing", "relation": "provide", "target": "Scalable Computing Resources"},
+    {"source": "Cloud Computing", "relation": "have", "target": "Three Main Service Models"},
+    {"source": "Infrastructure", "relation": "provide", "target": "Virtualized Hardware Resources"},
+    {"source": "Platform", "relation": "offer", "target": "Development Environments"},
+    {"source": "Software", "relation": "deliver", "target": "Applications"},
+    {"source": "Users", "relation": "access", "target": "Storage"},
+    {"source": "Users", "relation": "access", "target": "Processing Power"}
+  ]
+}

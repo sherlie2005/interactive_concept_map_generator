@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Concept Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body data-theme="dark">
+    <div class="app-shell">
+        <aside class="left-panel glass">
+            <div class="panel-head">
+                <h1>Concept Map Studio</h1>
+                <p>Transform text into an interactive knowledge graph.</p>
+            </div>
+
+            <label for="inputText" class="field-label">Source Text</label>
+            <textarea id="inputText" placeholder="Paste your content here and generate a concept map..."></textarea>
+
+            <div class="upload-section">
+                <label for="pdfFile" class="field-label">Or Upload PDF</label>
+                <input id="pdfFile" type="file" accept="application/pdf" />
+                <div id="pdfFileName" class="upload-hint">No PDF selected</div>
+            </div>
+
+            <div class="actions-row">
+                <button id="generateBtn" class="btn btn-primary" type="button">
+                    <span>Generate</span>
+                    <span id="loadingSpinner" class="spinner hidden" aria-hidden="true"></span>
+                </button>
+                <button id="clearBtn" class="btn btn-ghost" type="button">Clear</button>
+            </div>
+
+            <div class="tools-grid">
+                <button id="resetLayoutBtn" class="btn btn-secondary" type="button">Reset Layout</button>
+                <button id="togglePhysicsBtn" class="btn btn-secondary" type="button">Pause Physics</button>
+                <button id="exportPngBtn" class="btn btn-secondary" type="button">Export PNG</button>
+                <button id="exportJsonBtn" class="btn btn-secondary" type="button">Export JSON</button>
+            </div>
+
+            <div class="panel-foot">
+                <span id="statusText">Idle</span>
+                <span id="nodeCount">0 nodes</span>
+                <span id="edgeCount">0 edges</span>
+            </div>
+        </aside>
+
+        <main class="graph-stage">
+            <div class="graph-toolbar glass">
+                <input id="searchInput" type="text" placeholder="Search concepts..." autocomplete="off" />
+                <button id="searchClearBtn" class="btn btn-ghost" type="button">Clear Search</button>
+                <button id="themeToggleBtn" class="btn btn-ghost" type="button">Light Theme</button>
+            </div>
+
+            <div id="graphArea" class="graph-area">
+                <svg id="graphSvg" aria-label="Concept graph visualization"></svg>
+                <canvas id="miniMap" width="220" height="150" title="Mini map"></canvas>
+                <div id="nodeTooltip" class="node-tooltip hidden"></div>
+                <div id="emptyState" class="empty-state">
+                    <h2>Ready to visualize</h2>
+                    <p>Enter text and click Generate to explore concepts and relations.</p>
+                    <p class="empty-note">Tip: paste text, upload PDF, or use both together.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside id="detailsPanel" class="details-panel glass">
+            <div class="details-header">
+                <h2>Node Details</h2>
+                <button id="closeDetailsBtn" class="btn btn-ghost" type="button">Close</button>
+            </div>
+            <div id="detailsBody" class="details-body">
+                <p>Select a node to inspect details.</p>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

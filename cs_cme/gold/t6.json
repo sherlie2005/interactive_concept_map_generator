@@ -1,0 +1,10 @@
+{
+  "edges": [
+    {"source": "Immune System", "relation": "protect", "target": "Body"},
+    {"source": "Immune System", "relation": "defend_against", "target": "Pathogens"},
+    {"source": "Lymphatic System", "relation": "support", "target": "Immune System"},
+    {"source": "Cardiovascular Systems", "relation": "transport", "target": "Oxygen"},
+    {"source": "Cardiovascular Systems", "relation": "transport", "target": "Nutrients"},
+    {"source": "Respiratory Systems", "relation": "transport", "target": "Oxygen"}
+  ]
+}

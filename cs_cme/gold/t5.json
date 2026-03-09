@@ -1,0 +1,10 @@
+{
+  "edges": [
+    {"source": "CPU", "relation": "execute", "target": "Instructions"},
+    {"source": "GPU", "relation": "accelerate", "target": "Parallel Computations"},
+    {"source": "CPU", "relation": "alias_of", "target": "Central Processing Unit"},
+    {"source": "GPU", "relation": "alias_of", "target": "Graphics Processing Unit"},
+    {"source": "CPU", "relation": "part_of", "target": "Computer System"},
+    {"source": "GPU", "relation": "part_of", "target": "Computer System"}
+  ]
+}
