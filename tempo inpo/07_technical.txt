@@ -1,1 +1,0 @@
-Neural networks consist of interconnected layers that process input data using weighted connections.
