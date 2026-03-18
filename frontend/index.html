@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS-CME – Interactive Concept Map Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="light-theme">
+
+ <!-- ====================== ADVANCED HERO PAGE ====================== -->
+<div id="hero" class="hero">
+  <div class="hero-content">
+    <h1>Interactive Concept Map Generator</h1>
+    <p class="hero-subtitle">
+      Turn any lecture notes, research paper, or textbook into a beautiful interactive concept map in seconds.<br>
+      Smart. Fast. Built for your final-year project.
+    </p>
+
+    <div class="features">
+      <div class="feature-card">
+        <h4>📊 Dynamic Root Node</h4>
+        <p>Automatically names the root from your document heading</p>
+      </div>
+      <div class="feature-card">
+        <h4>🔍 Smart Relations</h4>
+        <p>Extracts meaningful "uses", "contains", "is_a" connections</p>
+      </div>
+      <div class="feature-card">
+        <h4>📐 Formula Detection</h4>
+        <p>Captures equations, sqrt, argmax, Big-O & more</p>
+      </div>
+      <div class="feature-card">
+        <h4>🌳 Hierarchical Tree</h4>
+        <p>Real heading structure (Modelling the Topics)</p>
+      </div>
+    </div>
+
+    <button id="btn-launch" class="btn-launch">
+      Launch Concept Map Generator →
+    </button>
+  </div>
+</div>
+  <!-- ====================== ORIGINAL APP (hidden at start) ====================== -->
+  <header id="app-header" style="display: none;">
+    <h1>Interactive Concept Map Generator</h1>
+    <p class="subtitle">Powered by CS-CME (Context-Sensitive Concept Map Extraction Engine)</p>
+    <div class="header-controls">
+      <button id="btn-theme" title="Toggle dark / light theme">&#9789; Theme</button>
+    </div>
+  </header>
+
+  <div id="app-container" style="display: none;">
+    <!-- LEFT PANEL – Input -->
+    <aside id="input-panel">
+      <h2>Input</h2>
+
+      <!-- Tabs: Text | File -->
+      <div class="tab-bar">
+        <button class="tab active" data-tab="text-tab">Paste Text</button>
+        <button class="tab" data-tab="file-tab">Upload File</button>
+      </div>
+
+      <div id="text-tab" class="tab-content active">
+        <textarea id="input-text" placeholder="Paste your lecture notes, article, or textbook content here…" rows="14"></textarea>
+        <p class="hint">Max 15 000 characters / 2 000 words</p>
+      </div>
+
+      <div id="file-tab" class="tab-content">
+        <label class="file-upload-label" for="input-file">
+          <span>Choose .txt or .pdf file</span>
+          <input type="file" id="input-file" accept=".txt,.pdf" />
+        </label>
+        <p id="file-name" class="hint">No file selected</p>
+        <p class="hint">Max 10 PDF pages</p>
+      </div>
+
+      <button id="btn-generate" class="primary-btn">Generate Concept Map</button>
+      <div id="status-bar" class="hidden"></div>
+
+      <!-- Warnings -->
+      <div id="warnings" class="hidden"></div>
+
+      <!-- Stats -->
+      <div id="stats" class="hidden"></div>
+
+      <!-- Controls -->
+      <div id="controls" class="hidden">
+        <h3>Controls</h3>
+        <label><input type="checkbox" id="chk-physics" checked /> Physics simulation</label>
+        <label>
+          <span>Search:&nbsp;</span>
+          <input type="text" id="search-input" placeholder="Search concept…" />
+        </label>
+        <div class="btn-row">
+          <button id="btn-export-json" class="small-btn">Export JSON</button>
+          <button id="btn-export-png" class="small-btn">Export PNG</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTRE – Visualisation -->
+    <main id="vis-container">
+      <svg id="graph-svg"></svg>
+      <!-- Mini-map -->
+      <!-- <div id="minimap-container">
+        <canvas id="minimap-canvas" width="180" height="130"></canvas>
+        <div id="minimap-viewport"></div>
+      </div> -->
+      <div id="empty-state">
+        <p>Your interactive concept map will appear here.</p>
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL – Description -->
+    <aside id="detail-panel" class="hidden">
+      <button id="btn-close-detail">&times;</button>
+      <h2 id="detail-title">Concept</h2>
+      <div id="detail-cluster" class="badge"></div>
+      <div id="detail-freq"></div>
+      <h3>Description</h3>
+      <ul id="detail-descriptions"></ul>
+      <h3>Formulas</h3>
+      <ul id="detail-formulas"></ul>
+      <h3>Relations</h3>
+      <ul id="detail-relations"></ul>
+    </aside>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
